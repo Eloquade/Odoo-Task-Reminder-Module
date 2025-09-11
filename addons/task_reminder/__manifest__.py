@@ -8,7 +8,7 @@
     'depends': ['base'],
     'data': [
         'views/task_views.xml',
-        'views/task_qweb.xml',
+        'templates/task_qweb.xml',
         'data/reminder_cron.xml',
         'security/ir.model.access.csv'
     ],

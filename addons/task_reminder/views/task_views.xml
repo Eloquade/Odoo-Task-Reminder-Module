@@ -30,7 +30,6 @@
                 <field name="is_completed"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <!-- Makes whole card clickable in Odoo 18 -->
                         <div class="o_kanban_record oe_kanban_global_click">
                             <div class="o_kanban_record_title">
                                 <strong><field name="name"/></strong>
@@ -49,7 +48,7 @@
             </kanban>
         </field>
     </record>
-
+  
     <!-- Window Action -->
     <record id="action_task_reminder" model="ir.actions.act_window">
         <field name="name">Tasks</field>
@@ -64,7 +63,6 @@
           </p>
         </field>
     </record>
-
     <!-- Menus -->
     <menuitem id="menu_task_reminder_root" name="Task Reminder"/>
     <menuitem id="menu_task_reminder_tasks" parent="menu_task_reminder_root"

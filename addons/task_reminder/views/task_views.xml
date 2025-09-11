@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- backend tree/form/kanban here -->
+    <record id="action_task_reminder" model="ir.actions.act_window">
+        <field name="name">Tasks</field>
+        <field name="res_model">task.reminder</field>
+        <field name="view_mode">kanban,list</field>
+    </record>
+    <menuitem id="menu_task_reminder_root" name="Task Reminder"/>
+    <menuitem id="menu_task_reminder_tasks" parent="menu_task_reminder_root"
+              action="action_task_reminder"/>
+  </data>
+</odoo>
+

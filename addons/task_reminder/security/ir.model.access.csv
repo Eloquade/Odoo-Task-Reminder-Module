@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_task_reminder_user,task.reminder.user,model_task_reminder,base.group_user,1,1,1,1
+access_task_reminder_manager,task.reminder.manager,model_task_reminder,base.group_system,1,1,1,1

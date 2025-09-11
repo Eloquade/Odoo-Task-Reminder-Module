@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+    <template id="task_template" name="Task Reminder QWeb Page">
+        <t t-call="web.layout">
+            <div class="container mt-4">
+                <h1>Task Reminder (QWeb)</h1>
+                <t t-if="tasks">
+                    <ul>
+                        <t t-foreach="tasks" t-as="task">
+                            <li><t t-esc="task.name"/> - <t t-esc="task.deadline or ''"/></li>
+                        </t>
+                    </ul>
+                </t>
+                <t t-else="">
+                    <p>No tasks found.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+  </data>
+</odoo>

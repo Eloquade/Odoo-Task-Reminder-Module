@@ -3,7 +3,7 @@
     <template id="task_template" name="Task Reminder QWeb Page">
         <t t-call="web.layout">
             <div class="container mt-4">
-                <h1>Task Reminder (QWeb)</h1>
+                <h1>Task Reminder</h1>
                 <t t-if="tasks">
                     <ul>
                         <t t-foreach="tasks" t-as="task">

@@ -3,7 +3,7 @@
     <template id="task_template" name="Task Reminder QWeb Page">
         <t t-call="web.layout">
             <div class="container mt-4">
-                <h1>Task Reminder</h1>
+                <h1>Task Reminder (QWeb)</h1>
                 <t t-if="tasks">
                     <ul>
                         <t t-foreach="tasks" t-as="task">
@@ -17,5 +17,17 @@
             </div>
         </t>
     </template>
+
+    <record id="action_task_reminder_qweb" model="ir.actions.act_url">
+        <field name="name">Task Reminder (Web Page)</field>
+        <field name="type">ir.actions.act_url</field>
+        <field name="url">/task_reminder/tasks</field>
+        <field name="target">self</field>
+    </record>
+
+    <menuitem id="menu_task_reminder_qweb"
+              name="Task Reminder (Web Page)"
+              parent="menu_task_reminder_root"
+              action="action_task_reminder_qweb"/>
   </data>
 </odoo>

@@ -1,15 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <data>
-    <!-- backend tree/form/kanban here -->
+    <!-- Form View -->
+    <record id="view_task_reminder_form" model="ir.ui.view">
+        <field name="name">task.reminder.form</field>
+        <field name="model">task.reminder</field>
+        <field name="arch" type="xml">
+            <form string="Task Reminder">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="deadline"/>
+                        <field name="is_completed"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_task_reminder_kanban" model="ir.ui.view">
+        <field name="name">task.reminder.kanban</field>
+        <field name="model">task.reminder</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_dashboard">
+                <field name="name"/>
+                <field name="deadline"/>
+                <field name="is_completed"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <!-- Makes whole card clickable in Odoo 18 -->
+                        <div class="o_kanban_record oe_kanban_global_click">
+                            <div class="o_kanban_record_title">
+                                <strong><field name="name"/></strong>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <t t-if="record.deadline.value">
+                                    <small>Due: <field name="deadline"/></small>
+                                </t>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <field name="is_completed" widget="boolean_toggle"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Window Action -->
     <record id="action_task_reminder" model="ir.actions.act_window">
         <field name="name">Tasks</field>
         <field name="res_model">task.reminder</field>
-        <field name="view_mode">kanban,list</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create your first task!
+          </p>
+          <p>
+            Keep track of your tasks and never miss a deadline.
+          </p>
+        </field>
     </record>
+
+    <!-- Menus -->
     <menuitem id="menu_task_reminder_root" name="Task Reminder"/>
     <menuitem id="menu_task_reminder_tasks" parent="menu_task_reminder_root"
               action="action_task_reminder"/>
+
   </data>
 </odoo>
-

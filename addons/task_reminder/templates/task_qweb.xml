@@ -24,10 +24,5 @@
         <field name="url">/task_reminder/tasks</field>
         <field name="target">self</field>
     </record>
-
-    <menuitem id="menu_task_reminder_qweb"
-              name="Task Reminder (Web Page)"
-              parent="menu_task_reminder_root"
-              action="action_task_reminder_qweb"/>
   </data>
 </odoo>

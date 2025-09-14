@@ -65,8 +65,9 @@
     </record>
     <!-- Menus -->
     <menuitem id="menu_task_reminder_root" name="Task Reminder"/>
-    <menuitem id="menu_task_reminder_tasks" parent="menu_task_reminder_root"
-              action="action_task_reminder"/>
+    <menuitem id="menu_task_reminder_tasks" name="Tasks" parent="menu_task_reminder_root"/>
+    <menuitem id="menu_task_reminder_qweb" parent="menu_task_reminder_tasks" 
+              action="action_task_reminder" />
 
   </data>
 </odoo>

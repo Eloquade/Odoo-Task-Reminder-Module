@@ -9,7 +9,8 @@ class Task(models.Model):
     description = fields.Text(string='Description')
     deadline = fields.Datetime(string='Deadline', required=True)
     is_completed = fields.Boolean(string='Completed', default=False)
-
+    personal_task_id = fields.Many2one('personal.task', string='Related Personal Task')
+    
     def check_deadline(self):
         now = fields.Datetime.now()
         soon = now + timedelta(hours=1)

@@ -10,7 +10,9 @@ class Task(models.Model):
     deadline = fields.Datetime(string='Deadline', required=True)
     is_completed = fields.Boolean(string='Completed', default=False)
     personal_task_id = fields.Many2one('personal.task', string='Related Personal Task')
-    
+    tag = fields.Many2many('task.tag', string='Tags')
+    quest = fields.One2many('task.offer', 'task_id', string='Offers')
+
     def check_deadline(self):
         now = fields.Datetime.now()
         soon = now + timedelta(hours=1)

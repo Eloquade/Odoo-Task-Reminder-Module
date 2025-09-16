@@ -8,6 +8,8 @@
     'depends': ['base'],
     'data': [
         'views/task_views.xml',
+        'views/task_offer.xml',
+        'views/task_tag.xml',
         'views/personal_task_views.xml',
         'templates/task_qweb.xml',
         'data/reminder_cron.xml',

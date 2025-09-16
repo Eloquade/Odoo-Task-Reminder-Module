@@ -12,6 +12,7 @@
                     <field name="is_completed"/>
                     <field name="description"/>
                     <field name="personal_task_id"/>
+                    <field name="tag" widget="many2many_tags"/>
                 </list>
             </field>
     </record>
@@ -29,6 +30,7 @@
                         <field name="is_completed"/>
                         <field name="description"/>
                         <field name="personal_task_id"/>
+                        <field name="tag" widget="many2many_tags"/>
                     </group>
                 </sheet>
             </form>

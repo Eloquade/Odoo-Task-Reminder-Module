@@ -3,3 +3,7 @@ access_task_reminder_user,task.reminder.user,model_task_reminder,base.group_user
 access_task_reminder_manager,task.reminder.manager,model_task_reminder,base.group_system,1,1,1,1
 access_personal_task_user,personal.task.user,model_personal_task,base.group_user,1,1,1,1
 access_personal_task_manager,personal.task.manager,model_personal_task,base.group_system,1,1,1,1
+access_task_offer_user,task.offer.user,model_task_offer,base.group_user,1,1,1,1
+access_task_offer_manager,task.offer.manager,model_task_offer,base.group_system,1,1,1,1
+access_task_tag_user,task.tag.user,model_task_tag,base.group_user,1,1,1,1
+access_task_tag_manager,task.tag.manager,model_task_tag,base.group_system,1,1,1,1
